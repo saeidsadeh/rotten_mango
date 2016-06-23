@@ -5,6 +5,23 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def authorize
+    unless admin?
+      flash[:error] = "unauthorized access"
+      redirect_to movies_path
+      false
+    end
+  end
+
+  def admin?
+    if current_user.is_admin
+      true
+    else
+      false
+    end
+  end
+
+
   def restrict_access
     if !current_user
       flash[:alert] = "You must log in."

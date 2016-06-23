@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'kaminari'
+
 gem 'carrierwave'
 
 gem 'mini_magick', '~> 4.3'
-
-gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.0'
@@ -39,7 +39,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
