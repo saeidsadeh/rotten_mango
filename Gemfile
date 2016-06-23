@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'kaminari'
+
 gem 'carrierwave'
 
 gem 'mini_magick', '~> 4.3'

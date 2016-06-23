@@ -1,4 +1,6 @@
 class Admin::UsersController < ApplicationController
+  before_filter :authorize
+
   def index
     @users = User.all
   end
@@ -25,7 +27,7 @@ class Admin::UsersController < ApplicationController
 
 
   def user_params
-    params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation)
+    params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation, :is_admin)
   end
 
 end
