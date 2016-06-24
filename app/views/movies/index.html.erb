@@ -24,6 +24,7 @@
 </div>
 
 <h1>Rotten Mangoes</h1>
+<%= paginate @movies %>
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 <% @movies.each do |movie| %>
