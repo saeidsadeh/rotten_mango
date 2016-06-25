@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
       ['Over 120 minutes', 3],
     ]
     
-    @movies = Movie.all
+    @movies = Movie.all.page(params[:page]).per(10)
     if(params[:search])
       @movies = @movies.where("title LIKE ?", "%#{params[:search][:title]}%") if(params[:search][:title] && !params[:search][:title].empty?)
       @movies = @movies.where("director LIKE ?", "%#{params[:search][:director]}%") if(params[:search][:director] && !params[:search][:director].empty?)
